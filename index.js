@@ -13,8 +13,8 @@ import { UserController, PostController } from './controllers/index.js';
 
 mongoose
   .connect(process.env.MONGODB_URI)
-  .then(() => console.log('подключён к базе'))
-  .catch((err) => console.log('ошибка подключения', err));
+  .then(() => console.log('DB ok'))
+  .catch((err) => console.log('DB error', err));
 
 const app = express();
 
@@ -66,5 +66,5 @@ app.listen(process.env.PORT || 4444, (err) => {
     return console.log(err);
   }
 
-  console.log('Подключен к серверу');
+  console.log('Server OK');
 });
